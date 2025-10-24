@@ -3,6 +3,8 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public float range = 100f;
+    public float fireRate = 1f;
+
 
     public ParticleSystem muzzleFlash;
 
@@ -47,6 +49,6 @@ public class Gun : MonoBehaviour
             }
         }
 
-        nextTimeToFire = Time.time + 1f;
+        nextTimeToFire = Time.time + fireRate;
     }
 }
