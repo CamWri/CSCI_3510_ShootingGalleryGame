@@ -9,6 +9,15 @@ public class TargetCube : Target
     Vector3 rotation;
     float time;
 
+    private Quaternion initialRotation;
+
+    private void Start()
+    {
+        initialRotation = transform.rotation;
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +32,7 @@ public class TargetCube : Target
             else
             {
                 rotationOn = false;
-                target.transform.rotation = Quaternion.Euler(0, 0, 0);
+                target.transform.rotation = initialRotation;
             }
         }
     }
